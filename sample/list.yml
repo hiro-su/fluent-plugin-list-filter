@@ -1,0 +1,7 @@
+device:
+  - server01-hoge1
+  - server01-hoge2
+  - server01-hoge3
+
+host:
+  - mte-coenv001
