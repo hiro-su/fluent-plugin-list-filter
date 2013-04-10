@@ -16,10 +16,10 @@ module Fluent
     end
 
     def emit tag, es, chain
-      emit = lambda {|new_tag, stream| Engine.emit_stream new_tag, stream }
       es.each do |time, record|
         do_list_filter @list, record do
           emit.call eval(@tag), es
+          Engine.emit eval(@tag), time, record
         end
       end
       chain.next
